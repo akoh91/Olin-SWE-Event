@@ -1,0 +1,59 @@
+
+if (msg.payload.value >= 0 && msg.payload.value <= 78){
+    //red
+    msg.lcdColor = {r: 255, g: 0, b: 0};
+}
+else if (msg.payload.value > 78 && msg.payload.value <= 156){
+    //orange
+    msg.lcdColor = {r: 255, g: 128, b: 0};
+}
+else if (msg.payload.value > 156 && msg.payload.value <= 234){
+    //yellow
+    msg.lcdColor = {r: 255, g: 255, b: 0};
+}
+else if (msg.payload.value > 234 && msg.payload.value <= 312){
+    //red-green
+    msg.lcdColor = {r: 128, g: 255, b: 0};
+}
+else if (msg.payload.value > 312 && msg.payload.value <= 390){
+    //green
+    msg.lcdColor = {r: 0, g: 255, b: 0};
+}
+else if (msg.payload.value > 390 && msg.payload.value <= 468){
+    //blue-green
+    msg.lcdColor = {r: 0, g: 255, b: 128};
+}
+else if (msg.payload.value > 468 && msg.payload.value <= 546){
+    //green-blue
+    msg.lcdColor = {r: 0, g: 255, b: 255};
+}
+else if (msg.payload.value > 546 && msg.payload.value <= 624){
+    //light-blue
+    msg.lcdColor = {r: 0, g: 128, b: 255};
+}
+else if (msg.payload.value > 624 && msg.payload.value <= 702){
+    //blue
+    msg.lcdColor = {r: 0, g: 0, b: 255};
+}
+else if (msg.payload.value > 702 && msg.payload.value <= 780){
+    //purple
+    msg.lcdColor = {r: 127, g: 0, b: 255};
+}
+else if (msg.payload.value > 780 && msg.payload.value <= 858){
+    //pink-purple
+    msg.lcdColor = {r: 255, g: 0, b: 255};
+}
+else if (msg.payload.value > 858 && msg.payload.value <= 936){
+    //pink
+    msg.lcdColor = {r: 255, g: 0, b: 127};
+}
+else if (msg.payload.value > 936 && msg.payload.value <= 1023){
+    //gray
+    msg.lcdColor = {r: 128, g: 128, b: 128};
+}
+
+//don't display rotary value on lcd
+msg.lcdCursor = {row: 1, column: 0};
+msg.payload = '';
+
+return msg;
